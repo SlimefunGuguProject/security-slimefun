@@ -10,6 +10,8 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.logging.Logger;
+
 
 public class SecurityDoor extends SlimefunItem {
     public SecurityDoor(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -17,6 +19,8 @@ public class SecurityDoor extends SlimefunItem {
     }
     @Override
     public void preRegister() {
+
+
         BlockUseHandler blockUseHandler = this::onBlockRightClick;
         addItemHandler(blockUseHandler);
 
@@ -25,8 +29,9 @@ public class SecurityDoor extends SlimefunItem {
     }
 
     private void onBlockRightClick(PlayerRightClickEvent event) {
-        Bukkit.getLogger().config("Right Click Block Event");
-        Bukkit.getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
+        Logger logger = Bukkit.getLogger();
+        logger.config("Right Click Block Event");
+        logger.info(String.valueOf(event.getPlayer().getMainHand()));
     }
 
     private void onItemRightClick(PlayerRightClickEvent event) {
