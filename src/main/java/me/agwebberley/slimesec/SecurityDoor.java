@@ -25,7 +25,8 @@ public class SecurityDoor extends SlimefunItem {
     }
 
     private void onBlockRightClick(PlayerRightClickEvent event) {
-        event.cancel();
+        Bukkit.getLogger().config("Right Click Block Event");
+        Bukkit.getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
     }
 
     private void onItemRightClick(PlayerRightClickEvent event) {
@@ -41,6 +42,7 @@ public class SecurityDoor extends SlimefunItem {
          */
 
         // if (event.getPlayer().getMainHand())
+        Bukkit.getLogger().config("Right Click Item Event");
         Bukkit.getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
     }
 }
