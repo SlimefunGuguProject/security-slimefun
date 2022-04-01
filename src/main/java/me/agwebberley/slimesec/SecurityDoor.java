@@ -7,15 +7,9 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import org.bukkit.NamespacedKey;
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 
-import java.util.UUID;
-
-import static org.bukkit.Bukkit.getLogger;
 
 public class SecurityDoor extends SlimefunItem {
     public SecurityDoor(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -47,6 +41,6 @@ public class SecurityDoor extends SlimefunItem {
          */
 
         // if (event.getPlayer().getMainHand())
-        getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
+        Bukkit.getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
     }
 }
