@@ -15,6 +15,8 @@ import org.bukkit.persistence.PersistentDataType;
 
 import java.util.UUID;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class SecurityDoor extends SlimefunItem {
     public SecurityDoor(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
@@ -33,7 +35,7 @@ public class SecurityDoor extends SlimefunItem {
     }
 
     private void onItemRightClick(PlayerRightClickEvent event) {
-        ItemMeta itemmeta = event.getPlayer().getItemInUse().getItemMeta();
+        /*ItemMeta itemmeta = event.getPlayer().getItemInUse().getItemMeta();
         String PlayerUUid = String.valueOf(event.getPlayer().getUniqueId());
         PersistentDataContainer data = event.getPlayer().getItemInUse().getItemMeta().getPersistentDataContainer();
 
@@ -42,5 +44,9 @@ public class SecurityDoor extends SlimefunItem {
         } else {
             data.set(new NamespacedKey(SlimeSec.getPlugin(), "owner"), PersistentDataType.STRING, PlayerUUid);
         }
+         */
+
+        // if (event.getPlayer().getMainHand())
+        getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
     }
 }
