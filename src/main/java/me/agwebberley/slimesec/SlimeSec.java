@@ -32,7 +32,7 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
         NamespacedKey itemGroupId = new NamespacedKey(this, "slimesec");
         ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
 
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("SECURITY_DOOR", Material.IRON_DOOR, "&4Unbreakable Security Door", "&c+20%");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("SECURITY_DOOR", Material.DARK_OAK_DOOR, "&4Unbreakable Security Door", "&c+20%");
 
         ItemStack[] recipe = { null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND) };
 
