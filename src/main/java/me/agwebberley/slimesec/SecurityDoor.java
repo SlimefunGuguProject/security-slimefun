@@ -47,7 +47,8 @@ public class SecurityDoor extends SlimefunItem {
          */
 
         // if (event.getPlayer().getMainHand())
-        Bukkit.getLogger().config("Right Click Item Event");
-        Bukkit.getLogger().info(String.valueOf(event.getPlayer().getMainHand()));
+        Bukkit.getLogger().info("Right Click Item Event");
+        Bukkit.getLogger().info(String.valueOf(event.getPlayer().getInventory().getItemInMainHand()));
+
     }
 }
