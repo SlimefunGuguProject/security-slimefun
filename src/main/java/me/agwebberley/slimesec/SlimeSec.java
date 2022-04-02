@@ -24,9 +24,6 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update")) {
-        }
-
         ItemStack itemGroupItem = new CustomItemStack(Material.IRON_DOOR, "&4SlimeSec", "", "&a> Click to open");
 
         NamespacedKey itemGroupId = new NamespacedKey(this, "slimesec");
@@ -41,7 +38,7 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
 
         SlimefunItemStack KeyItemStack = new SlimefunItemStack("SECURITY_KEY", Material.SPECTRAL_ARROW, "&4Security Door Key", "");
 
-        ItemStack[] Keyrecipe = { null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND) };
+        ItemStack[] Keyrecipe = { null, null, null, null, new ItemStack(Material.GOLD_INGOT), null, null, new ItemStack(Material.GOLD_INGOT), null};
 
         Key key = new Key(itemGroup, KeyItemStack, RecipeType.ENHANCED_CRAFTING_TABLE, Keyrecipe);
         door.register(this);
