@@ -35,12 +35,21 @@ public class SecurityDoor extends SlimefunItem {
 
     private void onBlockRightClick(PlayerRightClickEvent event) {
         Logger logger = Bukkit.getLogger();
-        logger.config("Right Click Block Event");
-        logger.info(String.valueOf(event.getPlayer().getMainHand()));
+        NamespacedKey SecOwnerKey = new NamespacedKey(addon.getJavaPlugin(), "SecOwnerKey");
+        PersistentDataContainer SecurityOwner = new CustomBlockData(event.getClickedBlock().get(), addon.getJavaPlugin());
+
+        if(SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING) == null) {
+            SecurityOwner.set(SecOwnerKey, PersistentDataType.STRING, event.getPlayer().getDisplayName());
+            Bukkit.getServer().broadcastMessage("Owner Set");
+
+        } else {
+            String OwnerString = SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING);
+            Bukkit.getServer( ).broadcastMessage( "Already an Owner: " + OwnerString );
+        }
     }
 
     private void onItemRightClick(PlayerRightClickEvent event) {
-        NamespacedKey SecOwnerKey = new NamespacedKey(addon.getJavaPlugin(), "SecOwnerKey");
+
         /*ItemMeta itemmeta = event.getPlayer().getItemInUse().getItemMeta();
         String PlayerUUid = String.valueOf(event.getPlayer().getUniqueId());
         PersistentDataContainer data = event.getPlayer().getItemInUse().getItemMeta().getPersistentDataContainer();
@@ -51,15 +60,7 @@ public class SecurityDoor extends SlimefunItem {
             data.set(new NamespacedKey(SlimeSec.getPlugin(), "owner"), PersistentDataType.STRING, PlayerUUid);
         }
          */
-        PersistentDataContainer SecurityOwner = new CustomBlockData(event.getClickedBlock().get(), addon.getJavaPlugin());
 
-        try {
-            String OwnerString = SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING);
-            Bukkit.getServer( ).broadcastMessage( "Already an Owner: " + OwnerString );
-        } catch(Exception e) {
-            SecurityOwner.set(SecOwnerKey, PersistentDataType.STRING, event.getPlayer().getDisplayName());
-            Bukkit.getServer().broadcastMessage("Owner Set");
-        }
 
 
 
