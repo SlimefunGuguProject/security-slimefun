@@ -10,7 +10,10 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
+import org.bukkit.block.BlockState;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.MaterialData;
+import org.bukkit.material.Openable;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
@@ -45,6 +48,15 @@ public class SecurityDoor extends SlimefunItem {
         } else {
             String OwnerString = SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING);
             Bukkit.getServer( ).broadcastMessage( "Already an Owner: " + OwnerString );
+            BlockState state = event.getClickedBlock().get().getState();
+            Openable openable = (Openable) event.getClickedBlock().get().getBlockData();
+            if(!openable.isOpen()) {
+                openable.setOpen(true);
+            } else {
+                openable.setOpen(false);
+            }
+            state.setData((MaterialData) openable);
+            state.update();
         }
     }
 
