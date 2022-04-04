@@ -36,7 +36,8 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
         SecurityDoor door = new SecurityDoor(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         door.register(this);
 
-        SlimefunItemStack KeyItemStack = new SlimefunItemStack("SECURITY_KEY", Material.SPECTRAL_ARROW, "&4Security Door Key", "");
+        SlimefunItemStack KeyItemStack = new SlimefunItemStack("SECURITY_KEY", Material.SPECTRAL_ARROW, "&4Security Door Key", "lore");
+        KeyItemStack.setAmount(32);
 
         ItemStack[] Keyrecipe = { null, null, null, null, new ItemStack(Material.GOLD_INGOT), null, null, new ItemStack(Material.GOLD_INGOT), null};
 

@@ -5,13 +5,11 @@ name: SlimeSec
 author: Agwebberley
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: A generic Slimefun4-Addon
+description: Security Doors for SlimeFun
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
 main: me.agwebberley.slimesec.SlimeSec
 
-## You can change this to link to your website or repository. You can also remove this line if you want to.
-website: https://github.com/Slimefun/Addon-Template
 
 ## This value is automatically replaced by the version specified in your pom.xml file.
 ## Do not change this.
