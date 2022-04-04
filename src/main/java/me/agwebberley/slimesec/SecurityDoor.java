@@ -50,11 +50,7 @@ public class SecurityDoor extends SlimefunItem {
             Bukkit.getServer( ).broadcastMessage( "Already an Owner: " + OwnerString );
             BlockState state = event.getClickedBlock().get().getState();
             Openable openable = (Openable) event.getClickedBlock().get().getBlockData();
-            if(!openable.isOpen()) {
-                openable.setOpen(true);
-            } else {
-                openable.setOpen(false);
-            }
+            openable.setOpen(!openable.isOpen());
             state.setData((MaterialData) openable);
             state.update();
         }
