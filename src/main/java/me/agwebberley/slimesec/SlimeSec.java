@@ -24,20 +24,20 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         Config cfg = new Config(this);
 
-        ItemStack itemGroupItem = new CustomItemStack(Material.IRON_DOOR, "&4SlimeSec", "", "&a> Click to open");
+        ItemStack itemGroupItem = new CustomItemStack(Material.IRON_DOOR, "&4防盗门", "", "&a> 单击打开");
 
         NamespacedKey itemGroupId = new NamespacedKey(this, "slimesec");
         ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
 
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("SECURITY_DOOR", Material.IRON_DOOR, "&4Unbreakable Security Door", "");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("SECURITY_DOOR", Material.IRON_DOOR, "&4防盗门", "");
 
         ItemStack[] recipe = { null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND), null, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.DIAMOND) };
 
         SecurityDoor door = new SecurityDoor(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         door.register(this);
 
-        SlimefunItemStack KeyItemStack = new SlimefunItemStack("SECURITY_KEY", Material.SPECTRAL_ARROW, "&4Security Door Key", "lore");
-        KeyItemStack.setAmount(32);
+        SlimefunItemStack KeyItemStack = new SlimefunItemStack("SECURITY_KEY", Material.SPECTRAL_ARROW, "&4防盗门钥匙", "lore");
+        KeyItemStack.setAmount(2);
 
         ItemStack[] Keyrecipe = { null, null, null, null, new ItemStack(Material.GOLD_INGOT), null, null, new ItemStack(Material.GOLD_INGOT), null};
 
