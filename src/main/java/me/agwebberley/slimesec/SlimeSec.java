@@ -24,7 +24,7 @@ public class SlimeSec extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         Config cfg = new Config(this);
 
-        ItemStack itemGroupItem = new CustomItemStack(Material.IRON_DOOR, "&4防盗门", "", "&a> 单击打开");
+        ItemStack itemGroupItem = new CustomItemStack(Material.IRON_DOOR, "&4粘液防盗门", "", "&a> 单击打开");
 
         NamespacedKey itemGroupId = new NamespacedKey(this, "slimesec");
         ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
