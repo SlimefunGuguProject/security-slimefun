@@ -43,11 +43,11 @@ public class SecurityDoor extends SlimefunItem {
 
         if(SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING) == null) {
             SecurityOwner.set(SecOwnerKey, PersistentDataType.STRING, event.getPlayer().getDisplayName());
-            Bukkit.getServer().broadcastMessage("Owner Set");
+            Bukkit.getServer().broadcastMessage("设置所有者");
 
         } else {
             String OwnerString = SecurityOwner.get(SecOwnerKey, PersistentDataType.STRING);
-            Bukkit.getServer( ).broadcastMessage( "Already an Owner: " + OwnerString );
+            Bukkit.getServer( ).broadcastMessage( "已有一位所有者: " + OwnerString );
             BlockState state = event.getClickedBlock().get().getState();
             Openable openable = (Openable) event.getClickedBlock().get().getBlockData();
             openable.setOpen(!openable.isOpen());
